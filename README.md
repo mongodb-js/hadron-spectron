@@ -4,13 +4,13 @@
 ## Installation
 
 ```
-npm install --save hadron-spectron
+npm install --save-dev hadron-spectron
 ```
 
 ## Usage
 
 With Mocha, create an App instance in the before hook and launch it, and quit it
-in the after hook.
+in the after hook. For examples and more details, see [Compass' functional test README](https://github.com/10gen/compass/tree/master/test/functional).
 
 ```javascript
 const { App, selector } = require('hadron-spectron');
@@ -48,6 +48,8 @@ describe('Functional Test', function() {
   });
 });
 ```
+
+[`chai-as-promised`](http://webdriver.io/v3.4/guide/usage/transferpromises.html) support is provided automatically as a convenience.
 
 ## License
 

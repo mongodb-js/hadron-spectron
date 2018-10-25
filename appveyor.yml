@@ -12,6 +12,11 @@ install:
   - npm install -g npm@latest
   - npm ci
 
+# TODO (@imlucas) Attach webdriver/electron logs to CI runs.
+# https://www.appveyor.com/docs/packaging-artifacts/#pushing-artifacts-from-scripts
+# after_build:
+#   - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+
 build: off
 matrix:
   fast_finish: true

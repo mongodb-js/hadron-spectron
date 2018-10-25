@@ -9,8 +9,8 @@ chai.use(require('chai-as-promised'));
 const { expect } = chai;
 
 describe('App', function() {
-  this.slow(30000);
-  this.timeout(60000);
+  this.slow(5000);
+  this.timeout(10000);
 
   const root = path.join(__dirname, '..');
 
@@ -71,9 +71,12 @@ describe('App', function() {
     });
     it('must resolve true if actually quitting a running app', () => {
       const app = new App(root, path.join(__dirname, 'fixtures', 'standard'));
-      return app.launch().then(() => app.quit()).then(reallyQuit => {
-        expect(reallyQuit).to.equal(true);
-      });
+      return app
+        .launch()
+        .then(() => app.quit())
+        .then(reallyQuit => {
+          expect(reallyQuit).to.equal(true);
+        });
     });
   });
 });

@@ -15,12 +15,13 @@ install:
 
 # TODO (@imlucas) Attach webdriver/electron logs to CI runs.
 # https://www.appveyor.com/docs/packaging-artifacts/#pushing-artifacts-from-scripts
-after_build:
-  - ps: Get-ChildItem .\*.log | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+
+artifacts:
+  # pushing all *.nupkg files in build directory recursively
+  # - path: '**\*.nupkg'
+  - path: '*webdriver\*.log'
+  - path: '*chromedriver.log'
 
 build: off
-matrix:
-  fast_finish: true
-
 test_script:
   - npm test

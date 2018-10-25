@@ -4,7 +4,7 @@
   "description": "Hadron Spectron Test Support",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "cross-env DEBUG=* mocha",
     "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
     "check": "mongodb-js-precommit"
   },
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mongodb-js/hadron-spectron#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "electron": "^3.0.6",
     "eslint-config-mongodb-js": "^2.2.0",
     "mocha": "^3.2.0",

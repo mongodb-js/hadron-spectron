@@ -8,6 +8,17 @@ chai.use(require('chai-as-promised'));
 
 const { expect } = chai;
 
+var _t = null;
+
+function diagnosticStart(app) {
+  _t = setTimeout(function() {
+    app.generateDiagnosticReport();
+  }, 9000);
+}
+function diagnosticClear() {
+  clearTimeout(_t);
+}
+
 describe('App', function() {
   this.slow(5000);
   this.timeout(10000);
@@ -37,8 +48,10 @@ describe('App', function() {
   describe('#launch', () => {
     context('when the app has no loading window', () => {
       const app = new App(root, path.join(__dirname, 'fixtures', 'standard'));
+      diagnosticStart(app);
 
       after(() => {
+        diagnosticClear();
         return app.quit();
       });
 
@@ -51,8 +64,9 @@ describe('App', function() {
 
     context('when the app has a loading window', () => {
       const app = new App(root, path.join(__dirname, 'fixtures', 'loading'));
-
+      diagnosticStart(app);
       after(() => {
+        diagnosticClear();
         return app.quit();
       });
 
@@ -71,10 +85,12 @@ describe('App', function() {
     });
     it('must resolve true if actually quitting a running app', () => {
       const app = new App(root, path.join(__dirname, 'fixtures', 'standard'));
+      diagnosticStart(app);
       return app
         .launch()
         .then(() => app.quit())
         .then(reallyQuit => {
+          diagnosticClear();
           expect(reallyQuit).to.equal(true);
         });
     });

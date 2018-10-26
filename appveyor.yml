@@ -19,8 +19,7 @@ install:
 artifacts:
   # pushing all *.nupkg files in build directory recursively
   # - path: '**\*.nupkg'
-  - path: '*webdriver\*.log'
-  - path: '*chromedriver.log'
+  - path: '*.md'
 
 build: off
 test_script:

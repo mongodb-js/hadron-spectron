@@ -40,6 +40,8 @@
     "chai": "^3.5.0",
     "chai-as-promised": ">= 6.x",
     "debug": "mongodb-js/debug#v2.2.3",
+    "globby": "^8.0.1",
+    "rimraf": "^2.6.2",
     "spectron": "^5.0.0"
   }
 }

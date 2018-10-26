@@ -13,7 +13,7 @@ var _t = null;
 function diagnosticStart(app) {
   _t = setTimeout(function() {
     app.generateDiagnosticReport();
-  }, 9000);
+  }, 25000);
 }
 function diagnosticClear() {
   clearTimeout(_t);
@@ -21,7 +21,7 @@ function diagnosticClear() {
 
 describe('App', function() {
   this.slow(5000);
-  this.timeout(10000);
+  this.timeout(30000);
 
   const root = path.join(__dirname, '..');
 

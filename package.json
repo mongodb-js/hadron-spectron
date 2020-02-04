@@ -5,16 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
     "check": "mongodb-js-precommit"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/mongodb-js/hadron-spectron.git"
   },
-  "precommit": [
-    "check"
-  ],
   "dependency-check": {
     "ignore": [
       "electron"
@@ -36,11 +32,10 @@
     "eslint-config-mongodb-js": "^5.0.3",
     "mocha": "^5.2.0",
     "mongodb-js-precommit": "^1.0.1",
-    "pify": "^4.0.1",
-    "pre-commit": "^1.2.2"
+    "pify": "^4.0.1"
   },
   "peerDependencies": {
-    "electron": "^3.0.0"
+    "electron": "*"
   },
   "dependencies": {
     "chai": "^3.5.0",

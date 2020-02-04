@@ -4,17 +4,14 @@
   "description": "Hadron Spectron Test Support",
   "main": "index.js",
   "scripts": {
+    "ci": "npm run check && xvfb-maybe npm test",
     "test": "mocha",
-    "fmt": "mongodb-js-fmt ./*.js ./test/*.js",
     "check": "mongodb-js-precommit"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/mongodb-js/hadron-spectron.git"
   },
-  "precommit": [
-    "check"
-  ],
   "dependency-check": {
     "ignore": [
       "electron"
@@ -32,20 +29,20 @@
   },
   "homepage": "https://github.com/mongodb-js/hadron-spectron#readme",
   "devDependencies": {
-    "electron": "^3.0.0",
+    "electron": "^8.0.0",
     "eslint-config-mongodb-js": "^5.0.3",
     "mocha": "^7.0.1",
     "mongodb-js-precommit": "^2.2.0",
     "pify": "^4.0.1",
-    "pre-commit": "^1.2.2"
+    "xvfb-maybe": "^0.2.1"
   },
   "peerDependencies": {
-    "electron": "^3.0.0"
+    "electron": "*"
   },
   "dependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": ">= 6.x",
     "debug": "^4.1.1",
-    "spectron": "^5.0.0"
+    "spectron": "^10.0.0"
   }
 }

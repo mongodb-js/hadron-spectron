@@ -36,7 +36,7 @@
     "eslint-config-mongodb-js": "^5.0.3",
     "mocha": "^7.0.1",
     "mongodb-js-precommit": "^2.2.0",
-    "pify": "^4.0.1",
+    "pify": "^5.0.0",
     "pre-commit": "^1.2.2"
   },
   "peerDependencies": {

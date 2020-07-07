@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/mongodb-js/hadron-spectron#readme",
   "devDependencies": {
-    "electron": "^3.0.0",
+    "electron": "^7.2.4",
     "eslint-config-mongodb-js": "^5.0.3",
     "mocha": "^7.0.1",
     "mongodb-js-precommit": "^2.2.0",
@@ -40,7 +40,7 @@
     "pre-commit": "^1.2.2"
   },
   "peerDependencies": {
-    "electron": "^3.0.0"
+    "electron": "^7.2.4"
   },
   "dependencies": {
     "chai": "^3.5.0",
